@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  json-server:
+    image: node
+    ports:
+    - 8000:3000
+    working_dir: /json-server
+    volumes:
+    - ./:/json-server
+    command: bash pipe_json.sh

@@ -1,0 +1,41 @@
+http://localhost:8080/json_server/comments
+
+[
+    {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }
+]
+
+
+http://localhost:8080/json_server/posts
+
+[
+    {
+        "id": 1,
+        "title": "json-server",
+        "author": "typicode"
+    }
+]
+
+
+http://localhost:8080/json_server/profile
+
+{
+    "name": "typicode"
+}
+
+http://localhost:8080/lite_server/
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Error</title>
+    </head>
+    <body>
+        <pre>Cannot GET /lite_server/</pre>
+    </body>
+</html>

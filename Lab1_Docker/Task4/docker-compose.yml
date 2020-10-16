@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    json_server:
+        image: node:latest
+        working_dir: /json_server
+        volumes:
+        - ./json_server_files:/json_server
+        command: bash pipe_json.sh
+        expose:
+        - 8000
+
+    lite_server:
+        image: node:latest
+        working_dir: /lite_server
+        volumes:
+        - ./lite_server_files:/lite_server
+        command: bash pipe_lite_server.sh
+        expose:
+        - 3000
+
+    nginx:
+        image: nginx
+        volumes:
+        - ./nginx_templates:/etc/nginx/templates
+        ports:
+        - "8080:80"
+        environment:
+            - NGINX_HOST=0.0.0.0
+            - NGINX_PORT=80
+        links:
+        - json_server
+        - lite_server
